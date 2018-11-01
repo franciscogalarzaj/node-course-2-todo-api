@@ -28,11 +28,23 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
         console.log('Great success!' + result);        
     });  */
 
+/*     db.collection('Todos').findOneAndDelete({
+        text: 'Walk the dog'
+    }).then((result) => {
+        console.log(result);                
+    }); 
+ */
+
     db.collection('Todos').findOneAndDelete({
         text: 'Walk the dog'
     }).then((result) => {
         console.log(result);                
     }); 
+
+    var seen = {};
+    return a.filter(function(item) {
+        return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+    });
 
     //db.close();
 });
